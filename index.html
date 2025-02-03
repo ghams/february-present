@@ -13,12 +13,14 @@
             background-color: white;
             font-family: Arial, sans-serif;
             text-align: center;
+            overflow: hidden;
         }
         .container {
             position: relative;
+            z-index: 2;
         }
         .gif-container img {
-            max-width: 200px;
+            max-width: 300px;
         }
         .buttons {
             margin-top: 20px;
@@ -38,9 +40,35 @@
         .no {
             background-color: #C56767;
         }
+        .gif-fixed {
+            position: absolute;
+            max-width: 250px;
+            z-index: 1;
+        }
+        .gif-top {
+            top: 10%;
+            left: 41%;
+            transform: translateX(-50%);
+        }
+        .gif-left {
+            top: 60%;
+            left: 23%;
+        }
+        .gif-right {
+            top: 20%;
+            right: 21%;
+        }
+		.gif-bot-right {
+			top: 65%;
+			right: 22%;
     </style>
 </head>
 <body>
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjFvd3lxMzF5anFoY2EwMnRwNHBybndjOXE5dGVmdDQ4YTQ4ajByNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EPDj26UdcUBnEh6B0W/giphy.gif" class="gif-fixed gif-top" alt="gif">
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDBvMWo0a21sbHZkZWY3Y2d3emc0NmQ3OXRvdzVtb3ltNXRxd2h2byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tLcf4s4DK3tZmYUn6F/giphy.gif" class="gif-fixed gif-left" alt="gif">
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDBiY3dlYnhia2lvZmkwaHFsazF3ZWQ1ZWRkOGpwY3k1NDMzNW5reSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26FLdmIp6wJr91JAI/giphy.gif" class="gif-fixed gif-right" alt="gif">
+	   <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3Z1bTc3dHkyMjBrMzh0b2NwNWduN245eW52cmNkemFnZG9ybWNtMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zrxazUScjhxo4/giphy.gif" class="gif-fixed gif-bot-right" alt="gif">
+    
     <div class="container">
         <div class="gif-container">
             <img id="gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHkwdzVpam53YjRkbHM2eWRsOG15a3lscWljNDlubDJhczB4anB6MCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/6NEeCCIhKHEVPN0OAE/giphy.gif" alt="Cute gif">
@@ -53,7 +81,7 @@
     </div>
     
     <script>
-        let noTexts = ["Are you sure?", "Really?", "Think again!", "Last chance!", "Come on!", "Please?", "🥺"];
+        let noTexts = ["Are you sure?", "What if I asked really really nicely?", "Think again!", "I'll bake carrot cake!", "How about beef tacos as well?", "PLEASE BEBO", "hey! why did we get this far 😭", "Sad", "No way you got here", "bebo please", "BEBOOOO", "BEBO", "BEBOOOI", "BEEEEBO", "AYO?", "BUT BEBO!!", "not like this :(", "not like this :(", "not like this :(", "not like this :(", "not like this :("];
         let yesButton = document.getElementById("yes");
         let noButton = document.getElementById("no");
         let question = document.getElementById("question");
@@ -62,7 +90,7 @@
         let yesSize = 18;
 
         noButton.addEventListener("click", function() {
-            yesSize += 40;
+            yesSize += 30;
             yesButton.style.fontSize = yesSize + "px";
             yesButton.style.padding = (yesSize / 2) + "px " + yesSize + "px";
             
